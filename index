@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .options {
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .options input {
+      margin-right: 10px;
+    }
+
+    .options.active {
+      border-color: #2c9c68;
+      background: #e8f5ef;
+    }
+
+    .product {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .product img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h4 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .product-info p {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    .dropdown {
+      margin-top: 10px;
+    }
+
+    .dropdown select {
+      width: 48%;
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 12px;
+      background: #2c9c68;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h3>Check for options below...</h3>
+  <div class="options" onclick="selectOptions(1)" id="option1Box">
+    <input type="radio" name="options" id="option1">
+    <label for="option1"><strong>T-Shirt Bundle</strong></label>
+    <div class="dropdown" id="dropdown1" style="display:none;" onclick="event.stopPropagation()">
+      <div class="product">
+        <img src="images/tshirt.jpg" alt="T-shirt">
+        <div class="product-info">
+          <h4>Basic T-Shirt</h4>
+          <p>₹499</p>
+          <select>
+            <option>Size</option>
+            <option>S</option><option>M</option><option>L</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>Red</option><option>Blue</option><option>Black</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="options" onclick="selectOptions(2)" id="option2Box">
+    <input type="radio" name="options" id="option2">
+    <label for="option2"><strong>Hoodie + T-Shirt Combo</strong></label>
+    <div class="dropdown" id="dropdown2" style="display:none;" onclick="event.stopPropagation()">
+      <div class="product">
+        <img src="images/hoodie.jpg" alt="Hoodie">
+        <div class="product-info">
+          <h4>Casual Hoodie</h4>
+          <p>₹999</p>
+          <select>
+            <option>Size</option>
+            <option>S</option><option>M</option><option>L</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>Grey</option><option>Black</option><option>Green</option>
+          </select>
+        </div>
+      </div>
+      <div class="product">
+        <img src="images/tee.jpg" alt="T-shirt">
+        <div class="product-info">
+          <h4>Graphic Tee</h4>
+          <p>₹599</p>
+          <select>
+            <option>Size</option>
+            <option>S</option><option>M</option><option>L</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>White</option><option>Blue</option><option>Black</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="options" onclick="selectOptions(3)" id="option3Box">
+    <input type="radio" name="options" id="option3">
+    <label for="option3"><strong>Full Outfit Set</strong></label>
+    <div class="dropdown" id="dropdown3" style="display:none;" onclick="event.stopPropagation()" >
+      <div class="product">
+        <img src="images/shirt.jpg" alt="Shirt">
+        <div class="product-info">
+          <h4>Formal Shirt</h4>
+          <p>₹799</p>
+          <select>
+            <option>Size</option>
+            <option>S</option><option>M</option><option>L</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>White</option><option>Sky Blue</option><option>Pink</option>
+          </select>
+        </div>
+      </div>
+      <div class="product">
+        <img src="images/trousers.jpg" alt="Trouser">
+        <div class="product-info">
+          <h4>Slim Fit Trouser</h4>
+          <p>₹899</p>
+          <select>
+            <option>Size</option>
+            <option>30</option><option>32</option><option>34</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>Black</option><option>Grey</option><option>Navy</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+
+  <script>
+    let activeOption = null;
+
+    function selectOptions(option) {
+      const allOptions = document.querySelectorAll('.options');
+      const dropdowns = {
+        1: document.getElementById('dropdown1'),
+        2: document.getElementById('dropdown2'),
+        3: document.getElementById('dropdown3')
+      };
+
+      const radios = {
+        1: document.getElementById('option1'),
+        2: document.getElementById('option2'),
+        3: document.getElementById('option3')
+      };
+
+      const boxes = {
+        1: document.getElementById('option1Box'),
+        2: document.getElementById('option2Box'),
+        3: document.getElementById('option3Box')
+      };
+
+      if (activeOption === option) {
+        dropdowns[option].style.display = 'none';
+        boxes[option].classList.remove('active');
+        radios[option].checked = false;
+        activeOption = null;
+      } else {
+        allOptions.forEach(opt => opt.classList.remove('active'));
+        Object.values(dropdowns).forEach(dd => dd.style.display = 'none');
+
+        dropdowns[option].style.display = 'block';
+        boxes[option].classList.add('active');
+        radios[option].checked = true;
+        activeOption = option;
+      }
+    }
+  </script>
+
+</body>
+</html>
