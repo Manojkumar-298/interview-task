@@ -91,7 +91,7 @@
     <label for="option1"><strong>T-Shirt Bundle</strong></label>
     <div class="dropdown" id="dropdown1" style="display:none;" onclick="event.stopPropagation()">
       <div class="product">
-        <img src="images/tshirt.jpg" alt="T-shirt">
+        <img src="tshirt.jpg" alt="T-shirt">
         <div class="product-info">
           <h4>Basic T-Shirt</h4>
           <p>₹499</p>
@@ -112,7 +112,7 @@
     <label for="option2"><strong>Hoodie + T-Shirt Combo</strong></label>
     <div class="dropdown" id="dropdown2" style="display:none;" onclick="event.stopPropagation()">
       <div class="product">
-        <img src="images/hoodie.jpg" alt="Hoodie">
+        <img src="hoodie.jpg" alt="Hoodie">
         <div class="product-info">
           <h4>Casual Hoodie</h4>
           <p>₹999</p>
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="product">
-        <img src="images/tee.jpg" alt="T-shirt">
+        <img src="tee.jpg" alt="T-shirt">
         <div class="product-info">
           <h4>Graphic Tee</h4>
           <p>₹599</p>
@@ -148,7 +148,7 @@
     <label for="option3"><strong>Full Outfit Set</strong></label>
     <div class="dropdown" id="dropdown3" style="display:none;" onclick="event.stopPropagation()" >
       <div class="product">
-        <img src="images/shirt.jpg" alt="Shirt">
+        <img src="shirt.jpg" alt="Shirt">
         <div class="product-info">
           <h4>Formal Shirt</h4>
           <p>₹799</p>
@@ -163,7 +163,7 @@
         </div>
       </div>
       <div class="product">
-        <img src="images/trousers.jpg" alt="Trouser">
+        <img src="trousers.jpg" alt="Trouser">
         <div class="product-info">
           <h4>Slim Fit Trouser</h4>
           <p>₹899</p>
